@@ -19,7 +19,7 @@ const store = configureStore();
 //const state = store.getState();
 //console.log(state.filters);
 
-//const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+// const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 //console.log(store.getState());
 
 const jsx = (
