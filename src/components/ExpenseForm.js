@@ -1,9 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
-
 
 
 export default class ExpenseForm extends React.Component {
@@ -18,15 +15,18 @@ export default class ExpenseForm extends React.Component {
       calendarFocused: false,
       error: ''
     };
-  }
+  };
+
   onDescriptionChange = (e) => {
     const description = e.target.value;
     this.setState(() => ({ description }));
   };
+
   onNoteChange = (e) => {
     const note = e.target.value;
     this.setState(() => ({ note }));
   };
+  
   onAmountChange = (e) => {
     const amount = e.target.value;
 
@@ -34,14 +34,17 @@ export default class ExpenseForm extends React.Component {
       this.setState(() => ({ amount }));
     }
   };
+
   onDateChange = (createdAt) => {
     if (createdAt) {
       this.setState(() => ({ createdAt }));
     }
   };
+
   onFocusChange = ({ focused }) => {
     this.setState(() => ({ calendarFocused: focused }));
   };
+
   onSubmit = (e) => {
     e.preventDefault();
 
@@ -55,8 +58,9 @@ export default class ExpenseForm extends React.Component {
         createdAt: this.state.createdAt.valueOf(),
         note: this.state.note
       });
-    }
-  }
+    };
+  };
+
   render() {
     return (
       <div>
